@@ -1,0 +1,21 @@
+syntax ="proto3";
+
+package calculator ;
+
+option go_package="github.com/AdekunleDally/grpc-unary-api/calculator/proto" ;
+     
+message AddTwoNumbRequest {
+    double first_num = 1 ;
+    double second_num = 2 ;
+    int64 operation_type =3;
+}
+
+message AdditionResponse {
+    double result = 1 ;
+    string err_result =2 ;
+}
+
+service  AdditionService {
+    rpc AddTwoNumbers(AddTwoNumbRequest) returns (AdditionResponse) ;
+}
+
